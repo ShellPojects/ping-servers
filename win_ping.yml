@@ -1,0 +1,5 @@
+---
+  - hosts: all
+    tasks:
+      - name: Checking Ping status for windows
+        ansible.windows.win_ping:
