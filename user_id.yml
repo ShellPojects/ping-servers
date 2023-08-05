@@ -1,0 +1,11 @@
+---
+- hosts: all
+  
+  tasks:
+    - name: Check user avaliable
+      command: "id ansadmin"
+      register: userid
+
+    - name: Display user ID
+      debug:
+        var: userid.stdout
