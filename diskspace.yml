@@ -1,0 +1,13 @@
+---
+- hosts: all
+  gather_facts: no
+
+  tasks:
+
+    - name: Checking uptime
+      command: "/usr/bin/df -hP"
+      register: diskspace
+
+    - name: Display uptime
+      debug:
+        var: diskspace.stdout
