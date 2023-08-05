@@ -1,0 +1,12 @@
+---
+- hosts: all
+
+  tasks:
+
+    - name: Checking uptime
+      command: "/usr/bin/uptime"
+      register: uptime
+
+    - name: Display uptime
+      debug:
+        var: uptime.stdout
